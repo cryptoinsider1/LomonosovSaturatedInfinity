@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: LomonosovSaturatedInfinity
+message: If you use this work, please cite it as below.
+type: software
+authors:
+  - family-names: Goncharov
+    given-names: Vladimir
+    orcid: https://orcid.org/0009-0004-1430-3376
+year: 2025
+license: CC-BY-NC-SA-4.0
+url: https://github.com/cryptoinsider1/LomonosovSaturatedInfinity
+repository-code: https://github.com/cryptoinsider1/LomonosovSaturatedInfinity
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Goncharov
+      given-names: Vladimir
+  year: 2025
+  title: LomonosovSaturatedInfinity — Algorithm of the Saturated Infinity
+  journal: GitHub Repository
