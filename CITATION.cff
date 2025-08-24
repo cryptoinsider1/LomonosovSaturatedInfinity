@@ -1,3 +1,4 @@
+```yaml
 cff-version: 1.2.0
 title: LomonosovSaturatedInfinity
 message: If you use this work, please cite it as below.
@@ -10,6 +11,9 @@ year: 2025
 license: CC-BY-NC-SA-4.0
 url: https://github.com/cryptoinsider1/LomonosovSaturatedInfinity
 repository-code: https://github.com/cryptoinsider1/LomonosovSaturatedInfinity
+abstract: >
+  Algorithm of the Saturated Infinity. A conceptual and mathematical formulation
+  of a “motionless observer” under unitary evolution with global phase invariance.
 preferred-citation:
   type: article
   authors:
