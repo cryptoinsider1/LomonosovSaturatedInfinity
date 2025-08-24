@@ -27,7 +27,6 @@ $$
 
 **Смысл:** состояние «неподвижно» в бесконечности; меняется лишь глобальная фаза восприятия.
 
-
 ---
 
 ## 🧩 Пример кода
@@ -49,3 +48,30 @@ psi_t = U @ psi_0
 print("Исходное состояние:", psi_0)
 print("После эволюции:", psi_t)
 ```
+
+---
+
+⚙️ Установка
+
+Требуется Python 3.9+.
+
+```python
+pip install -U pip numpy
+python `src/observer_operator.py`
+```
+
+📚 Цитирование
+
+Если вы используете этот репозиторий, пожалуйста, сошлитесь на него (см. [CITATION.cff](./CITATION.cff)):
+
+	Goncharov, Vladimir (2025). LomonosovSaturatedInfinity — Algorithm of the Saturated Infinity.
+[GitHub Repository.](https://github.com/cryptoinsider1/LomonosovSaturatedInfinity)
+
+📄 Лицензия
+
+CC BY-NC-SA 4.0.
+
+[LICENSE.md](./LICENSE.md)
+[Полный текст](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+---
