@@ -72,6 +72,5 @@ python src/observer_operator.py
 CC BY-NC-SA 4.0.
 
 [LICENSE.md](./LICENSE.md)
-[Полный текст](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
