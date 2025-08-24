@@ -12,6 +12,6 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-N
 Любое коммерческое использование возможно только с письменного разрешения автора.
 Производные работы должны распространяться на тех же условиях (CC BY-NC-SA 4.0).
 ```
-Полный текст лицензии: https://creativecommons.org/licenses/by-nc-sa/4.0/
+[Полный текст лицензии](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
