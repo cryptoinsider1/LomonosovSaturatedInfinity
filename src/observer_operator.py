@@ -16,9 +16,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Tuple
 import numpy as np
-
 
 ArrayC = np.ndarray
 
@@ -43,7 +41,7 @@ def normalize(psi: ArrayC, eps: float = 1e-12) -> ArrayC:
 
 
 def unitary_global_phase(dim: int, phi: float) -> ArrayC:
-    """Унитарный оператор вида U = e^{iφ} * I_dim."""
+    """Унитарный оператор вида U = e^{iφ} · I_dim."""
     return np.exp(1j * phi) * np.eye(dim, dtype=complex)
 
 
@@ -60,29 +58,31 @@ def norm_preserved(psi_0: ArrayC, psi_t: ArrayC, eps: float = 1e-10) -> bool:
 
 def differs_by_global_phase(psi_0: ArrayC, psi_t: ArrayC, eps: float = 1e-10) -> bool:
     """
-    Проверяет, что psi_t = e^{iφ} psi_0 для некоторого φ.
+    Проверяет, что psi_t = e^{iφ} · psi_0 для некоторого φ.
     Если psi_0 содержит нули, берём ненулевые компоненты.
     """
     nz = np.where(np.abs(psi_0) > eps)[0]
     if len(nz) == 0:
         # Тривиальный случай: |0⟩ → |0⟩
         return True
-    # Оценим фазу по первой ненулевой компоненте
+        # Оценим фазу по первой ненулевой компоненте   
     k = nz[0]
     ratio = psi_t[k] / psi_0[k]
     if np.abs(ratio) < eps:
         return False
-    # Нормализуем обе волновые функции и сравним на равенство «с точностью до фазы»
+        # Нормализуем обе волновые функции и сравним на равенство «с точностью до фазы»
     phi = np.angle(ratio)
     phase = np.exp(1j * phi)
     return np.allclose(psi_t, phase * psi_0, atol=1e-9)
 
 
-def evolve_with_global_phase(
-    psi_0: ArrayC, phi: float, eps: float = 1e-12
-) -> EvolutionResult:
+def evolve_with_global_phase(psi_0: ArrayC, phi: float, eps: float = 1e-12) -> EvolutionResult:
     """Эволюция состояния под действием глобальной фазы e^{iφ} I."""
-    psi_0 = normalize(np.asarray(psi_0, dtype=complex), eps=eps)
+    psi_0 = np.asarray(psi_0, dtype=complex)
+    if psi_0.ndim != 1:
+        raise ValueError("Ожидается одномерный вектор состояния.")
+    psi_0 = normalize(psi_0, eps=eps)
+
     dim = psi_0.shape[0]
     U = unitary_global_phase(dim, phi)
     assert is_unitary(U), "Сконструированный оператор должен быть унитарным."
