@@ -60,17 +60,22 @@ def differs_by_global_phase(psi_0: ArrayC, psi_t: ArrayC, eps: float = 1e-10) ->
     """
     Проверяет, что psi_t = e^{iφ} · psi_0 для некоторого φ.
     Если psi_0 содержит нули, берём ненулевые компоненты.
+    Возвращает False, если невозможно надёжно восстановить фазу.
     """
     nz = np.where(np.abs(psi_0) > eps)[0]
     if len(nz) == 0:
         # Тривиальный случай: |0⟩ → |0⟩
         return True
-        # Оценим фазу по первой ненулевой компоненте   
+
+    # Оценим фазу по первой ненулевой компоненте
     k = nz[0]
     ratio = psi_t[k] / psi_0[k]
+
     if np.abs(ratio) < eps:
+        # ratio слишком мал → невозможно надёжно восстановить фазу
         return False
-        # Нормализуем обе волновые функции и сравним на равенство «с точностью до фазы»
+
+    # Сравнение "с точностью до глобальной фазы"
     phi = np.angle(ratio)
     phase = np.exp(1j * phi)
     return np.allclose(psi_t, phase * psi_0, atol=1e-9)
