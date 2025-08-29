@@ -35,16 +35,12 @@ $$
 
 ```python
 import numpy as np
-
 # Исходное состояние
 psi_0 = np.array([1+0j, 0+0j])
-
 # Унитарный оператор с фиксированной фазой e^{iφ}
 phi = np.pi / 7
 U = np.exp(1j * phi) * np.eye(2, dtype=complex)
-
 psi_t = U @ psi_0
-
 print("Исходное состояние:", psi_0)
 print("После эволюции:", psi_t)
 ```
@@ -73,7 +69,7 @@ U унитарен        : True
 
 📚 Цитирование
 
-Если вы используете этот репозиторий, пожалуйста, сошлитесь на него (см. [CITATION.cff](./CITATION.cff)):
+Если вы используете этот репозиторий, пожалуйста, сошлитесь на него [CITATION.cff](./CITATION.cff)
 
 	Goncharov, Vladimir (2025). LomonosovSaturatedInfinity — Algorithm of the Saturated Infinity.
 [GitHub Repository.](https://github.com/cryptoinsider1/LomonosovSaturatedInfinity)
