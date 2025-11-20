@@ -1,4 +1,4 @@
-# LomonosovSaturatedInfinity
+# Lomonosov Saturated Infinity
 
 **Алгоритм Насыщенной Бесконечности.**  
 От Ломоносова — к Вычислительной Математике и Кибернетике.  
